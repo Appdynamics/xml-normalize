@@ -1,0 +1,18 @@
+<config>
+  <!-- this is a comment -->
+  <!-- this is another comment -->
+  <!-- this is the first comment
+ugly stuff here
+<foo xx="yy" />
+ -->
+  <app name="bar" type="plugh">
+    <baz>188</baz>
+    <freen>199</freen>
+    <twee>277</twee>
+  </app>
+  <app name="foo" type="xyzzy">
+    <baz>88</baz>
+    <freen>99</freen>
+    <twee>77</twee>
+  </app>
+</config>

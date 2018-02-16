@@ -1,0 +1,12 @@
+<config>
+<app name="foo" type="xyzzy">
+	<baz>88</baz>
+	<freen>99</freen>
+	<twee>77</twee>
+</app>
+<app name="bar" type="plugh">
+	<baz>188</baz>
+	<freen>199</freen>
+	<twee>277</twee>
+</app>
+</config>
