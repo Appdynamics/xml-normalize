@@ -23,4 +23,4 @@ diff domain-prev.normal.xml domain-normal.xml will give a usable diff
 
 issues:
 this thing does not handle comments well.  they are sorted together
-
+within the upper level element.  ideally, we don't move comments or somehow bind them to the succeeding tag.
