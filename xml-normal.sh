@@ -12,22 +12,31 @@
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
-
+#
+# revised 
+#	27 OCT 2021 - cmm 		test for xsltproc and clean up files in /tmp
+#
 attr=/tmp/transform-attr.xml
 sort=/tmp/transform-sort.xml
-tfile=/tmp/attr.xml
+
+trap "rm -f $attr $sort" EXIT
 
 XSLT=xsltproc
 
 if [ "$#" -ne 2 ]; then
 	echo "usage: $0 <input xml file> <output xml file>"
-    exit -1
+    exit 2
+fi
+
+if ! which $XSLT > /dev/null ; then
+	echo "must have $XSLT installed"
+    exit 1
 fi
 
 infile=$1
 outfile=$2
 
-rm -f $attr $sort $tfile
+rm -f $attr $sort
 
 # this is the first pass
 # used to normalize attributes
@@ -95,4 +104,5 @@ cat > $sort <<- SORT
 SORT
 
 $XSLT --output - $attr $infile | $XSLT --output $outfile $sort -
+
 exit 0
